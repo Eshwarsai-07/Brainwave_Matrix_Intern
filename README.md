@@ -1,6 +1,6 @@
 # Brainwave_Matrix_Intern
-Data science/Data Analytics Internship at Brainwave_Matrix_Solutions
-Welcome to my Data Science/Data Analytics Internship Portfolio at Brainwave_Matrix_Solutions ! This repository contains a collection of projects that demonstrate my skills in data analysis, machine learning, and problem-solving. Below is a summary of the projects:
+Cyber Security Intern/Data Analytics Internship at Brainwave_Matrix_Solutions
+Welcome to my Cyber Security Intern/Cyber Security Intern Internship Portfolio at Brainwave_Matrix_Solutions ! This repository contains a collection of projects that demonstrate my skills in data analysis, Security, and problem-solving. Below is a summary of the projects:
 
 Offer letter : Eshwar sai G A.pdf
 Task_1 :Build a Python Cyber Security - Phishing Link Scanner 
