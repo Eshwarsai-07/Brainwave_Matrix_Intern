@@ -1,48 +1,34 @@
-# password strength checker
-
-import re 
-
-# password strength check conditions:
-# min 8 chars, digit, uppercase, lowercase, special char
-
-def check_password_strength(password):
-    """
-    Function to check the strength of a password.
-    """
-    if len(password) < 8:
-        return "Weak: Password must be at least 8 characters long."
-    
-    if not any(char.isdigit() for char in password):
-        return "Weak: Password must include at least one number."
-    
-    if not any(char.isupper() for char in password):
-        return "Weak: Password must include at least one uppercase letter."
-    
-    if not any(char.islower() for char in password):
-        return "Weak: Password must include at least one lowercase letter."
-    
-    if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
-        return "Medium: Add special characters to make your password stronger."
-    
-    return "Strong: Your password is secure!"
-
-def password_checker():
-    """
-    Main function to take user input and check password strength.
-    """
-    print("Welcome to the Password Strength Checker!")
-
-    while True:
-        password = input("\nEnter your password (or type 'exit' to quit): ")
-        
-        if password.lower() == "exit":
-            print("Thank you for using the Password Strength Checker! Goodbye!")
-            break
-        
-        result = check_password_strength(password)
-        print(result)
-
-
-# Run the password checker
-if __name__ == "__main__":
-    password_checker()
+import re
+def password_strength(password):
+ if len(password)  <8:
+  return "Weak :Password is too short"
+  
+ has_lowercase = any(char.islower() for char in password)
+ has_uppercase = any(char.isupper() for char in password)
+ has_digit = any(char.isdigit() for char in password)
+ has_special = any(char in '!@#$%^&*()_+{}:"<>?/;~[]-=' for char in password)
+ 
+ complexity = sum([has_lowercase,has_uppercase,has_digit,has_special])
+ 
+ if complexity < 3:
+  return "Weak:Password lacks complexity"
+  
+ common_pattern = [
+  r'123',
+  r'abc',
+  r'password',
+  r'querty',
+  r'lll',
+  r'admin',
+  r'letmein',
+  r'love',
+  r'master',
+  r'123456' ]
+ 
+ for pattern in common_pattern:
+  if re.search (pattern,password ,re.IGNORECASE):
+   return "Weak:Password contains common pattern"
+  return "Strong:Password meets criteria for strength"
+   
+password = input("Enter your password: ")
+print (password_strength(password))
